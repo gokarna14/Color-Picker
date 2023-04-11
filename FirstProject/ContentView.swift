@@ -18,6 +18,8 @@ struct ContentView: View {
             {
                 Text("Hello, world!")
             }
+            
+            
             else
             {
                 Text("The Text is chenged !")
