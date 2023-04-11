@@ -17,6 +17,7 @@ struct ContentView: View {
             if(isTextShowing)
             {
                 Text("Hello, world!")
+                Text("This is on the new branch")
             }
             
             
