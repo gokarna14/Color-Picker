@@ -9,6 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isTextShowing = true
+    @State var name = ""
+    @State var red : Double = 0.0
+    @State var green : Double = 0.0
+    @State var blue : Double = 0.0
+    
+    
+    
     var body: some View {
         VStack {
 //            Image(systemName: "globe")
@@ -27,12 +34,39 @@ struct ContentView: View {
 //            Button("Click to see magic!") {
 //                isTextShowing = !isTextShowing
 //            }
-            HStack{
+            VStack{
+                Text("Color Slider Stack")
+                    .font(.largeTitle)
+                HStack
+                {
+                    Text("Red : ")
+                        .padding()
+                    Slider(value: $red)
+                    Text("\(red)")
+                }
+                HStack
+                {
+                    Text("Green : ")
+                        .padding()
+                    Slider(value: $green)
+                    Text("\(green)")
+
+                }
+                HStack
+                {
+                    Text("Blue : ")
+                        .padding()
+                    Slider(value: $blue)
+                    Text("\(blue)")
+                }
                 Image(systemName: "gamecontroller.fill")
-                    .foregroundColor(.green)
-                Text("Horizontal Stack")
+                    .foregroundColor(Color(red: red, green: green, blue: blue))
+                    .font(.largeTitle)
             }
-            .padding(.all, 4.0)
+            
+//            TextField("Name ", text: $name)
+//                .padding(.horizontal, 50)
+//            Text("Hello and welcome \(name) !")
         }
     }
 }
