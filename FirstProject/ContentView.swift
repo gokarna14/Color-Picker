@@ -15,58 +15,35 @@ struct ContentView: View {
     @State var blue : Double = 0.0
     
     
-    
     var body: some View {
         VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundColor(.accentColor)
-//            if(isTextShowing)
-//            {
-//                Text("Hello, world!")
-//                Text("This is on the new branch")
-//            }
-//            else
-//            {
-//                Text("The Text is chenged !")
-//            }
-//
-//            Button("Click to see magic!") {
-//                isTextShowing = !isTextShowing
-//            }
             VStack{
-                Text("Color Slider Stack")
+                Text("Color Slider")
                     .font(.largeTitle)
                 HStack
                 {
-                    Text("Red : ")
-                        .padding()
+                    ColorInfo(color: .red, iconName: "r.circle.fill")
                     Slider(value: $red)
-                    Text("\(red)")
+                        .padding()
                 }
+                
                 HStack
                 {
-                    Text("Green : ")
-                        .padding()
+                    ColorInfo(color: .green, iconName: "g.circle.fill")
                     Slider(value: $green)
-                    Text("\(green)")
-
+                        .padding()
                 }
+                
                 HStack
                 {
-                    Text("Blue : ")
-                        .padding()
+                    ColorInfo(color: .blue, iconName: "b.circle.fill")
+                        
                     Slider(value: $blue)
-                    Text("\(blue)")
+                        .padding()
                 }
-                Image(systemName: "gamecontroller.fill")
-                    .foregroundColor(Color(red: red, green: green, blue: blue))
-                    .font(.largeTitle)
+                
+                TheMainView(red: red, green: green, blue: blue)
             }
-            
-//            TextField("Name ", text: $name)
-//                .padding(.horizontal, 50)
-//            Text("Hello and welcome \(name) !")
         }
     }
 }
